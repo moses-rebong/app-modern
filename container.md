@@ -66,10 +66,10 @@ $ docker ps
   - db password = docker
   - db user = docker
   - db name = docker
-  - persistence path = /User/ckongman/work/postgresql/data, create folder /User/ckongman/work/postgresql, don't create /data
+  - persistence path = /User/MosesRebong/work/postgresql/data, create folder /User/MosesRebong/work/postgresql, don't create /data
   - -d for background process
 ```bash
-$ docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_USER=docker -e POSTGRES_DB=docker -d -v /Users/ckongman/work/postgresql/data:/var/lib/postgresql/data postgres
+$ docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_USER=docker -e POSTGRES_DB=docker -d -v /Users/MosesRebong/work/postgresql/data:/var/lib/postgresql/data postgres
 ```
 
 - check container process
@@ -129,7 +129,7 @@ $ mvn spring-boot:run
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.4.RELEASE)
 
-2021-04-20 11:05:36.003  INFO 30792 --- [  restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ckongman-mac with PID 30792 (/Users/ckongman/work/workspace/app-modern/container/target/classes started by ckongman in /Users/ckongman/work/workspace/app-modern/container)
+2021-04-20 11:05:36.003  INFO 30792 --- [  restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ckongman-mac with PID 30792 (/Users/MosesRebong/work/workspace/app-modern/container/target/classes started by ckongman in /Users/MosesRebong/work/workspace/app-modern/container)
 ...
 2021-04-20 11:05:38.671  INFO 30792 --- [  restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 7.995 seconds (JVM running for 8.448)
 ```
