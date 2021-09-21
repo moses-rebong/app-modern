@@ -146,12 +146,16 @@ mvn spring-boot:run
   - call http://localhost:8080/api/v1/employees
   - POST : { "name": "tiger", "age":12 }
   ```bash
-  $ curl -d '{"name":"tiger", "age":12}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/v1/employees
+  curl -d '{"name":"tiger", "age":12}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/v1/employees
+  ```
+  ```bash
   {"id":1,"name":"tiger","age":12}%
   ```
   - get all data with http://localhost:8080/api/v1/employees
   ```bash
-  $ curl http://localhost:8080/api/v1/employees
+  curl http://localhost:8080/api/v1/employees
+  ```
+  ```bash
   [{"id":1,"name":"tiger","age":12}]%
   ```
   - stop mvn, stop postgres container database (docker desktop dashboard is a good choice!)
@@ -218,6 +222,8 @@ redis                                                                           
 - test get all data with http://localhost:8080/api/v1/employees
   ```bash
   curl http://localhost:8080/api/v1/employees
+  ```
+  ```bash
   [{"id":1,"name":"tiger","age":12}]%
   ```
 
