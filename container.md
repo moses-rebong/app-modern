@@ -49,7 +49,9 @@ Server:
 ```
 - get docker image
 ```bash
-$ docker image list -a
+docker image list -a
+```
+```bash
 REPOSITORY                                                                          TAG                  IMAGE ID       CREATED         SIZE
 redis                                                                               latest               a617c1c92774   5 weeks ago     105MB
 quay.io/quarkus/ubi-quarkus-native-image                                            21.0.0-java11        31ccea2b17ae   2 months ago    1.39GB
@@ -58,7 +60,7 @@ openzipkin/zipkin                                                               
 ```
 - get docker container
 ```bash
-$ docker ps
+docker ps
 ```
 
 ## Create Database Container
@@ -71,18 +73,18 @@ $ docker ps
   - persistence path = /User/MosesRebong/work/postgresql/data, create folder /User/MosesRebong/work/postgresql, don't create /data
   - -d for background process
 ```bash
-$ docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_USER=docker -e POSTGRES_DB=docker -d -v /Users/MosesRebong/work/postgresql/data:/var/lib/postgresql/data postgres
+docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_USER=docker -e POSTGRES_DB=docker -d -v /Users/MosesRebong/work/postgresql/data:/var/lib/postgresql/data postgres
 ```
 
 - check container process
 ```bash
-$ docker ps
+docker ps
 CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS                    NAMES
 675021e2cef7   postgres   "docker-entrypoint.s…"   7 seconds ago   Up 5 seconds   0.0.0.0:5432->5432/tcp   postgres
 ```
 - remote to container and test database
 ```bash
-$ docker exec -it postgres bash
+docker exec -it postgres bash
 root@f83e262793db:/# psql -U docker
 psql (13.1 (Debian 13.1-1.pgdg100+1))
 Type "help" for help.
@@ -121,7 +123,9 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/docker
 ```
 - run application
 ```bash
-$ mvn spring-boot:run
+mvn spring-boot:run
+```
+```bash
 ...
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -158,7 +162,7 @@ spring.datasource.url=jdbc:postgresql://postgres:5432/docker
 ```
 - build jar file
 ```bash
-$ mvn clean package -DskipTests
+mvn clean package -DskipTests
 ```
 - review Dockerfile in container folder, build docker 
 ```bash
@@ -166,7 +170,7 @@ docker build ./ -t myapp
 ```
 - review new image
 ```bash
-$ docker images
+docker images
 REPOSITORY                                                                          TAG                  IMAGE ID       CREATED         SIZE
 myapp                                                                               latest               b16111d01abc   5 minutes ago   142MB
 redis                                                                               latest               a617c1c92774   5 weeks ago     105MB
@@ -176,7 +180,9 @@ redis                                                                           
   - review docker-compose.yml
   - run docker-compose
   ```bash
-  $ docker-compose up
+  docker-compose up
+  ```
+  ```bash
   Docker Compose is now in the Docker CLI, try `docker compose up`
 
   Creating postgres ... done
@@ -209,7 +215,7 @@ redis                                                                           
   ```
 - test get all data with http://localhost:8080/api/v1/employees
   ```bash
-  $ curl http://localhost:8080/api/v1/employees
+  curl http://localhost:8080/api/v1/employees
   [{"id":1,"name":"tiger","age":12}]%
   ```
 
