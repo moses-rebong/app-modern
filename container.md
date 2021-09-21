@@ -27,7 +27,7 @@ Presentation ([container.pptx](presentation/container.pptx))
 - start docker desktop
 - get docker info
 ```bash
-$ docker info
+docker info
 Client:
  Context:    default
  Debug Mode: false
