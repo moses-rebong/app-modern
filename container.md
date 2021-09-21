@@ -79,6 +79,8 @@ docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_
 - check container process
 ```bash
 docker ps
+```
+```bash
 CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS                    NAMES
 675021e2cef7   postgres   "docker-entrypoint.s…"   7 seconds ago   Up 5 seconds   0.0.0.0:5432->5432/tcp   postgres
 ```
